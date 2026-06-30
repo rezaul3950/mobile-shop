@@ -1,0 +1,160 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #667eea;
+  --color-primary-dark: #764ba2;
+  --color-primary-light: #a855f7;
+  --color-secondary: #ec4899;
+  --color-accent: #8b5cf6;
+  --color-text: #f1f5f9;
+  --color-text-muted: #94a3b8;
+  --color-heading: #ffffff;
+  --color-bg: #0f172a;
+  --color-surface: #1e1b4b;
+  --color-border: rgba(255, 255, 255, 0.1);
+  --font-family-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+/* Selection styling */
+::selection {
+  background: rgba(99, 102, 241, 0.3);
+  color: white;
+}
+
+/* Custom animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 1s ease-out;
+}
+
+.animate-fadeInRight {
+  animation: fadeInRight 1s ease-out;
+}
+
+/* Gradient animation */
+@keyframes gradient {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 3s ease infinite;
+}
+
+/* Float animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Glow pulse */
+@keyframes glowPulse {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+.animate-glow {
+  animation: glowPulse 2s ease-in-out infinite;
+}
+
+/* Float animation with rotation */
+@keyframes floatRotate {
+  0%, 100% {
+    transform: translateY(0px) rotateY(-15deg) rotateX(5deg);
+  }
+  50% {
+    transform: translateY(-20px) rotateY(-12deg) rotateX(8deg);
+  }
+}
+
+.animate-float-rotate {
+  animation: floatRotate 4s ease-in-out infinite;
+}
+
+/* Shimmer effect */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  background-size: 1000px 100%;
+  animation: shimmer 3s infinite;
+}
+
+/* Phone glow pulse */
+@keyframes phoneGlow {
+  0%, 100% {
+    box-shadow: 0 30px 60px rgba(59, 130, 246, 0.6), 0 10px 20px rgba(139, 92, 246, 0.4);
+  }
+  50% {
+    box-shadow: 0 40px 80px rgba(59, 130, 246, 0.8), 0 15px 30px rgba(139, 92, 246, 0.6);
+  }
+}
+
+.animate-phone-glow {
+  animation: phoneGlow 2s ease-in-out infinite;
+}
