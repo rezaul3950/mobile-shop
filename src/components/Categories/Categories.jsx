@@ -5,7 +5,11 @@ import {
   Headphones,
   Watch,
   ArrowRight,
-  SmartphoneIcon
+  SmartphoneIcon,
+  Monitor,
+  Tv,
+  Video,
+  Plus
 } from "lucide-react";
 
 
@@ -42,6 +46,20 @@ function Categories() {
       desc: "Smart lifestyle tech",
       image: "https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=400&h=400&fit=crop",
     },
+  ];
+
+  // Mobile category icons (shown only on mobile)
+  const mobileCategories = [
+    { name: "Phones", icon: Smartphone },
+    { name: "Laptops", icon: Monitor },
+    { name: "iPads", icon: Tablet },
+    { name: "Watches", icon: Watch },
+    { name: "Cameras", icon: Headphones },
+    { name: "Headphones", icon: Headphones },
+    { name: "Computers", icon: Monitor },
+    { name: "Televisions", icon: Tv },
+    { name: "Vidio Projector", icon: Video },
+    { name: "Accessories", icon: Plus },
   ];
 
 
@@ -88,6 +106,12 @@ function Categories() {
         "
       >
 
+
+        {/* Section Title Mobile */}
+        <div className="best-offers-header lg:hidden">
+          <h3 className="section-title-mobile">Shop By Category</h3>
+          <a href="#categories">See All</a>
+        </div>
 
         {/* Heading */}
 
@@ -150,6 +174,21 @@ function Categories() {
         </div>
 
 
+
+        {/* Mobile Category Icons Grid */}
+        <div className="category-icons-grid lg:hidden">
+          {mobileCategories.map((cat, index) => {
+            const Icon = cat.icon
+            return (
+              <div key={index} className="category-icon-item">
+                <div className="icon-wrapper">
+                  <Icon size={24} />
+                </div>
+                <span>{cat.name}</span>
+              </div>
+            )
+          })}
+        </div>
 
         {/* Category Grid */}
 

@@ -16,8 +16,8 @@ function Hero() {
   return (
     <section 
         id="home"
-        className="relative min-h-screen bg-gradient-to-br from-slate-900 via-indigo-950 to-purple-900 overflow-hidden"
->
+        className="hero-section relative min-h-screen bg-gradient-to-br from-slate-900 via-indigo-950 to-purple-900 overflow-hidden"
+    >
       {/* Animated glow effects */}
       <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500/50 rounded-full blur-[80px] animate-pulse"></div>
       <div className="absolute top-1/4 left-1/4 w-[400px] h-[400px] bg-purple-500/40 rounded-full blur-[100px] animate-pulse" style={{ animationDelay: '1s' }}></div>
@@ -32,88 +32,97 @@ function Hero() {
       </div>
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-8 items-start min-h-[60vh]">
-    
-    {/* Content */}
-    <div className="text-white space-y-4 mt-24">
       
-      {/* Badge */}
-      <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-500/40 to-purple-500/40 backdrop-blur-md border border-blue-400/50 rounded-full text-sm font-medium text-white">
-        <span>✨</span>
-        <span>NEW ARRIVAL 2026</span>
+      {/* Mobile Search Bar */}
+      <div className="mobile-search-bar lg:hidden">
+        <input 
+          type="text" 
+          placeholder="Search about you need"
+          className="w-full"
+        />
       </div>
-          
-          {/* Title */}
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-tight mb-6">
-            Next Level
-            <br />
-            <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-gradient">
-              Smartphones
+
+      {/* Content */}
+      <div className="text-white space-y-4 mt-24">
+        
+        {/* Badge */}
+        <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-500/40 to-purple-500/40 backdrop-blur-md border border-blue-400/50 rounded-full text-sm font-medium text-white">
+          <span>✨</span>
+          <span>NEW ARRIVAL 2026</span>
+        </div>
+            
+        {/* Title */}
+        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-tight mb-6">
+          Next Level
+          <br />
+          <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-gradient">
+            Smartphones
+          </span>
+        </h1>
+        
+        {/* Subtitle */}
+        <p className="text-lg text-slate-300 leading-relaxed max-w-xl">
+          Discover the latest smartphones from top brands with cutting-edge technology and premium design.
+        </p>
+        
+        {/* Buttons */}
+        <div className="flex flex-wrap gap-4 pt-4">
+          <a href="#shop" className="group relative inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-500 to-indigo-600 text-white rounded-xl font-semibold hover:-translate-y-1 transition-all shadow-xl shadow-blue-500/40 hover:shadow-2xl hover:shadow-blue-500/50 overflow-hidden">
+            <span className="absolute inset-0 bg-gradient-to-r from-blue-600 to-indigo-700 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+            <span className="relative flex items-center gap-2">
+              Shop Now
+              <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
             </span>
-          </h1>
-          
-          {/* Subtitle */}
-          <p className="text-lg text-slate-300 leading-relaxed max-w-xl">
-            Discover the latest smartphones from top brands with cutting-edge technology and premium design.
-          </p>
-          
-          {/* Buttons */}
-          <div className="flex flex-wrap gap-4 pt-4">
-            <a href="#shop" className="group relative inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-500 to-indigo-600 text-white rounded-xl font-semibold hover:-translate-y-1 transition-all shadow-xl shadow-blue-500/40 hover:shadow-2xl hover:shadow-blue-500/50 overflow-hidden">
-              <span className="absolute inset-0 bg-gradient-to-r from-blue-600 to-indigo-700 opacity-0 group-hover:opacity-100 transition-opacity"></span>
-              <span className="relative flex items-center gap-2">
-                Shop Now
-                <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </span>
-            </a>
-            <a href="#deals" className="group inline-flex items-center gap-2 px-8 py-4 bg-transparent text-white border-2 border-blue-500/50 rounded-xl font-semibold hover:bg-blue-500/10 hover:border-blue-500/80 hover:-translate-y-1 transition-all backdrop-blur-xl">
-              <span className="group-hover:text-blue-200 transition-colors">Explore Deals</span>
-            </a>
+          </a>
+          <a href="#deals" className="group inline-flex items-center gap-2 px-8 py-4 bg-transparent text-white border-2 border-blue-500/50 rounded-xl font-semibold hover:bg-blue-500/10 hover:border-blue-500/80 hover:-translate-y-1 transition-all backdrop-blur-xl">
+            <span className="group-hover:text-blue-200 transition-colors">Explore Deals</span>
+          </a>
+        </div>
+        
+        {/* Features */}
+        <div className="flex flex-wrap gap-6 pt-4">
+          <div className="group flex items-center gap-3 p-4 bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl hover:bg-white/10 hover:border-blue-500/30 transition-all cursor-pointer">
+            <div className="w-12 h-12 flex items-center justify-center bg-gradient-to-br from-blue-500/20 to-purple-500/20 border border-blue-500/30 rounded-xl group-hover:scale-110 transition-transform">
+              <svg className="w-6 h-6 text-purple-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <rect x="1" y="3" width="15" height="13"></rect>
+                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                <circle cx="18.5" cy="18.5" r="2.5"></circle>
+              </svg>
+            </div>
+            <div>
+              <strong className="block text-white font-semibold">Free Shipping</strong>
+              <span className="text-sm text-slate-400">On orders over $500</span>
+            </div>
           </div>
           
-          {/* Features */}
-          <div className="flex flex-wrap gap-6 pt-4">
-            <div className="group flex items-center gap-3 p-4 bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl hover:bg-white/10 hover:border-blue-500/30 transition-all cursor-pointer">
-              <div className="w-12 h-12 flex items-center justify-center bg-gradient-to-br from-blue-500/20 to-purple-500/20 border border-blue-500/30 rounded-xl group-hover:scale-110 transition-transform">
-                <svg className="w-6 h-6 text-purple-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <rect x="1" y="3" width="15" height="13"></rect>
-                  <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
-                  <circle cx="5.5" cy="18.5" r="2.5"></circle>
-                  <circle cx="18.5" cy="18.5" r="2.5"></circle>
-                </svg>
-              </div>
-              <div>
-                <strong className="block text-white font-semibold">Free Shipping</strong>
-                <span className="text-sm text-slate-400">On orders over $500</span>
-              </div>
+          <div className="group flex items-center gap-3 p-4 bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl hover:bg-white/10 hover:border-blue-500/30 transition-all cursor-pointer">
+            <div className="w-12 h-12 flex items-center justify-center bg-gradient-to-br from-blue-500/20 to-purple-500/20 border border-blue-500/30 rounded-xl group-hover:scale-110 transition-transform">
+              <svg className="w-6 h-6 text-purple-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
             </div>
-            
-            <div className="group flex items-center gap-3 p-4 bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl hover:bg-white/10 hover:border-blue-500/30 transition-all cursor-pointer">
-              <div className="w-12 h-12 flex items-center justify-center bg-gradient-to-br from-blue-500/20 to-purple-500/20 border border-blue-500/30 rounded-xl group-hover:scale-110 transition-transform">
-                <svg className="w-6 h-6 text-purple-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                </svg>
-              </div>
-              <div>
-                <strong className="block text-white font-semibold">1 Year Warranty</strong>
-                <span className="text-sm text-slate-400">Official brand warranty</span>
-              </div>
+            <div>
+              <strong className="block text-white font-semibold">1 Year Warranty</strong>
+              <span className="text-sm text-slate-400">Official brand warranty</span>
             </div>
-            
-            <div className="group flex items-center gap-3 p-4 bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl hover:bg-white/10 hover:border-blue-500/30 transition-all cursor-pointer">
-              <div className="w-12 h-12 flex items-center justify-center bg-gradient-to-br from-blue-500/20 to-purple-500/20 border border-blue-500/30 rounded-xl group-hover:scale-110 transition-transform">
-                <svg className="w-6 h-6 text-purple-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
-                </svg>
-              </div>
-              <div>
-                <strong className="block text-white font-semibold">24/7 Support</strong>
-                <span className="text-sm text-slate-400">Dedicated support</span>
-              </div>
+          </div>
+          
+          <div className="group flex items-center gap-3 p-4 bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl hover:bg-white/10 hover:border-blue-500/30 transition-all cursor-pointer">
+            <div className="w-12 h-12 flex items-center justify-center bg-gradient-to-br from-blue-500/20 to-purple-500/20 border border-blue-500/30 rounded-xl group-hover:scale-110 transition-transform">
+              <svg className="w-6 h-6 text-purple-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
+              </svg>
+            </div>
+            <div>
+              <strong className="block text-white font-semibold">24/7 Support</strong>
+              <span className="text-sm text-slate-400">Dedicated support</span>
             </div>
           </div>
         </div>
+      </div>
         
         {/* Visual */}
         <div className="relative flex items-center justify-center">

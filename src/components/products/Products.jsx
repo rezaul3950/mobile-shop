@@ -57,7 +57,7 @@ function Products() {
   ]
 
   return (
-    <section id="shop" className="py-20 bg-gradient-to-b from-slate-900 via-slate-900 to-indigo-950 relative overflow-hidden">
+    <section id="shop" className="products-section py-20 bg-gradient-to-b from-slate-900 via-slate-900 to-indigo-950 relative overflow-hidden">
       {/* Animated Background Effects */}
       <div className="absolute inset-0 opacity-40">
         <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/30 rounded-full blur-3xl animate-pulse"></div>
@@ -72,6 +72,12 @@ function Products() {
       }}></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Mobile Section Header */}
+        <div className="best-offers-header lg:hidden">
+          <h3 className="section-title-mobile">Best Offers</h3>
+          <a href="#shop">See All</a>
+        </div>
+
         {/* Header */}
         <div className="text-center mb-16 sm:mb-20">
           <div className="inline-block mb-4 sm:mb-6">
@@ -95,11 +101,11 @@ function Products() {
         </div>
 
         {/* Products Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div className="products-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {phones.map((phone, index) => (
-            <Link key={phone.id} to={`/product/${phone.id}`} className="group block bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden hover:-translate-y-2 transition-all duration-500 hover:border-blue-500/50 hover:shadow-2xl hover:shadow-blue-500/30 relative animate-fade-in" style={{animationDelay: `${index * 100}ms`}}>
+            <Link key={phone.id} to={`/product/${phone.id}`} className="product-card-mobile group block bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden hover:-translate-y-2 transition-all duration-500 hover:border-blue-500/50 hover:shadow-2xl hover:shadow-blue-500/30 relative animate-fade-in" style={{animationDelay: `${index * 100}ms`}}>
               {/* Image Container */}
-              <div className="relative p-6 sm:p-8 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10 flex items-center justify-center min-h-[280px] sm:min-h-[320px] overflow-hidden group-hover:shadow-inner">
+              <div className="product-image relative p-6 sm:p-8 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10 flex items-center justify-center min-h-[280px] sm:min-h-[320px] overflow-hidden group-hover:shadow-inner">
                 {/* Animated Border Glow */}
                 <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
                   <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 blur-xl opacity-30"></div>
@@ -123,6 +129,13 @@ function Products() {
                 <span className="absolute top-4 left-4 px-3 sm:px-4 py-1.5 sm:py-2 bg-gradient-to-r from-blue-500/30 to-purple-500/30 backdrop-blur-xl border border-blue-400/40 rounded-xl text-xs font-bold text-blue-200 uppercase tracking-wider z-10 shadow-lg shadow-blue-500/20">
                   {phone.brand}
                 </span>
+                
+                {/* Heart/Wishlist Button */}
+                <button className="wishlist-btn">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                  </svg>
+                </button>
                 
                 {/* Hot Badge */}
                 {index < 3 && (
@@ -160,11 +173,11 @@ function Products() {
               </div>
 
               {/* Content */}
-              <div className="p-6 sm:p-8 relative">
+              <div className="product-info p-6 sm:p-8 relative">
                 {/* Gradient Line */}
                 <div className="absolute top-0 left-6 right-6 h-0.5 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 opacity-50"></div>
                 
-                <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 group-hover:text-blue-300 transition-colors">{phone.name}</h3>
+                <h3 className="product-name text-xl sm:text-2xl font-bold text-white mb-2 group-hover:text-blue-300 transition-colors">{phone.name}</h3>
                 <p className="text-sm text-slate-400 mb-4 flex items-center gap-2">
                   <svg className="w-4 h-4 text-blue-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
@@ -173,7 +186,7 @@ function Products() {
                 </p>
                 
                 {/* Rating */}
-                <div className="flex items-center gap-2 mb-3">
+                <div className="product-rating flex items-center gap-2 mb-3">
                   <div className="flex items-center gap-0.5">
                     {[...Array(5)].map((_, i) => (
                       <svg key={i} className="w-3.5 h-3.5 text-yellow-400 fill-current" viewBox="0 0 24 24">
@@ -209,14 +222,13 @@ function Products() {
                 </div>
                 
                 {/* Price and Button */}
-                <div className="flex items-center justify-between gap-4">
-                  <div>
-                    <span className="text-3xl sm:text-4xl font-black bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+                <div className="product-price-row flex items-center justify-between gap-4">
+                  <div className="price-container">
+                    <span className="current-price text-3xl sm:text-4xl font-black bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
                       ${phone.price}
                     </span>
                     <div className="flex items-center gap-2 mt-1">
-                      <p className="text-xs text-slate-500 line-through">${phone.price + 200}</p>
-                      <span className="text-xs text-green-400 font-semibold">Save $200</span>
+                      <p className="original-price text-xs text-slate-500 line-through">${phone.price + 200}</p>
                     </div>
                   </div>
                   <button 
@@ -225,15 +237,13 @@ function Products() {
                       e.stopPropagation()
                       addToCart(phone)
                     }}
-                    className="px-4 sm:px-6 py-2.5 sm:py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl text-sm font-bold hover:shadow-2xl hover:shadow-blue-500/50 hover:scale-105 active:scale-95 transition-all duration-300 border border-blue-400/30 flex items-center gap-2 shadow-lg shadow-blue-500/30"
+                    className="add-to-cart-btn"
                   >
-                    <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                       <circle cx="9" cy="21" r="1"></circle>
                       <circle cx="20" cy="21" r="1"></circle>
                       <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
                     </svg>
-                    <span className="hidden sm:inline">Add to Cart</span>
-                    <span className="sm:hidden">Add</span>
                   </button>
                 </div>
               </div>

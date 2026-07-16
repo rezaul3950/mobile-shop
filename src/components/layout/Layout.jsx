@@ -1,5 +1,6 @@
 import Navbar from './Navbar/Navbar'
 import Footer from './Footer/Footer'
+import MobileBottomNav from './MobileBottomNav'
 
 function Layout({ children }) {
   return (
@@ -9,6 +10,7 @@ function Layout({ children }) {
         {children}
       </main>
       <Footer />
+      <MobileBottomNav />
     </div>
   )
 }
