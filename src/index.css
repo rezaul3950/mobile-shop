@@ -505,116 +505,116 @@
 
   /* Product card mobile improvements */
   .product-card-mobile {
-    background: rgba(255, 255, 255, 0.05) !important;
-    border-radius: 16px !important;
-    padding: 12px !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
   
   .product-card-mobile .product-image {
-    background: rgba(255, 255, 255, 0.05) !important;
-    border-radius: 12px !important;
-    padding: 16px !important;
-    margin-bottom: 12px !important;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
   }
   
   .product-card-mobile .product-info {
-    padding: 0 4px !important;
+    padding: 0 4px;
   }
   
   .product-card-mobile .product-name {
-    font-size: 14px !important;
-    font-weight: 600 !important;
-    color: #f1f5f9 !important;
-    margin-bottom: 4px !important;
+    font-size: 14px;
+    font-weight: 600;
+    color: #f1f5f9;
+    margin-bottom: 4px;
   }
   
   .product-card-mobile .product-rating {
-    display: flex !important;
-    align-items: center !important;
-    gap: 4px !important;
-    margin-bottom: 8px !important;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 8px;
   }
   
   .product-card-mobile .product-rating svg {
-    width: 12px !important;
-    height: 12px !important;
-    color: #fbbf24 !important;
+    width: 12px;
+    height: 12px;
+    color: #fbbf24;
   }
   
   .product-card-mobile .product-rating span {
-    font-size: 11px !important;
-    color: #94a3b8 !important;
-    margin-left: 4px !important;
+    font-size: 11px;
+    color: #94a3b8;
+    margin-left: 4px;
   }
   
   .product-card-mobile .product-price-row {
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
   
   .product-card-mobile .price-container {
-    display: flex !important;
-    align-items: center !important;
-    gap: 8px !important;
+    display: flex;
+    align-items: center;
+    gap: 8px;
   }
   
   .product-card-mobile .current-price {
-    font-size: 16px !important;
-    font-weight: 700 !important;
-    color: #f1f5f9 !important;
+    font-size: 16px;
+    font-weight: 700;
+    color: #f1f5f9;
   }
   
   .product-card-mobile .original-price {
-    font-size: 12px !important;
-    color: #94a3b8 !important;
-    text-decoration: line-through !important;
+    font-size: 12px;
+    color: #94a3b8;
+    text-decoration: line-through;
   }
   
   .product-card-mobile .add-to-cart-btn {
-    width: 32px !important;
-    height: 32px !important;
-    border-radius: 50% !important;
-    background: linear-gradient(135deg, #667eea, #764ba2) !important;
-    border: none !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    color: white !important;
-    cursor: pointer !important;
-    transition: transform 0.2s ease !important;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s ease;
   }
   
   .product-card-mobile .add-to-cart-btn:active {
-    transform: scale(0.95) !important;
+    transform: scale(0.95);
   }
   
   .product-card-mobile .add-to-cart-btn svg {
-    width: 16px !important;
-    height: 16px !important;
+    width: 16px;
+    height: 16px;
   }
 
   /* Heart icon on product card */
   .product-card-mobile .wishlist-btn {
-    position: absolute !important;
-    top: 8px !important;
-    right: 8px !important;
-    width: 28px !important;
-    height: 28px !important;
-    border-radius: 50% !important;
-    background: rgba(255, 255, 255, 0.9) !important;
-    border: none !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    color: #ef4444 !important;
-    cursor: pointer !important;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ef4444;
+    cursor: pointer;
   }
   
   .product-card-mobile .wishlist-btn svg {
-    width: 16px !important;
-    height: 16px !important;
+    width: 16px;
+    height: 16px;
   }
 
   /* Section title mobile */
