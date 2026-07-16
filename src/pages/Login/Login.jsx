@@ -33,21 +33,23 @@ function Login() {
       </div>
 
       <div className="max-w-md w-full relative z-10">
-        {/* Logo/Header */}
-        <div className="text-center mb-8">
-          <Link to="/" className="inline-block mb-6 hover:scale-110 transition-transform">
-            <img 
-              src="/Navber and Footer Logo.png" 
-              alt="Mobile Shop Logo" 
-              className="h-20 w-auto mx-auto"
-            />
-          </Link>
-          <h1 className="text-4xl font-black text-white mb-2">
-            {isLogin ? 'Welcome Back' : 'Create Account'}
-          </h1>
-          <p className="text-slate-400">
-            {isLogin ? 'Login to access your account' : 'Join us for the best mobile deals'}
-          </p>
+        {/* Logo Card */}
+        <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-2xl mb-8">
+          <div className="text-center">
+            <Link to="/" className="inline-block mb-4 hover:scale-110 transition-transform">
+              <img 
+                src="/Navber and Footer Logo.png" 
+                alt="Mobile Shop Logo" 
+                className="h-20 w-auto mx-auto"
+              />
+            </Link>
+            <h1 className="text-3xl font-black text-white mb-2">
+              {isLogin ? 'Welcome Back' : 'Create Account'}
+            </h1>
+            <p className="text-slate-400 text-sm">
+              {isLogin ? 'Login to access your account' : 'Join us for the best mobile deals'}
+            </p>
+          </div>
         </div>
 
         {/* Form Card */}
