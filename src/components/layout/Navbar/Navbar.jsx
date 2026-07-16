@@ -247,7 +247,14 @@ function Navbar() {
               )}
             </Link>
 
-            {/* Login button removed */}
+            <Link to="/login" className="flex items-center gap-2 px-4 sm:px-6 py-2.5 bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-600 text-white rounded-xl text-sm font-bold hover:shadow-2xl hover:shadow-cyan-500/50 hover:scale-105 active:scale-95 transition-all duration-300 border border-cyan-400/30">
+              <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+                <polyline points="10 17 15 12 10 7"></polyline>
+                <line x1="15" y1="12" x2="3" y2="12"></line>
+              </svg>
+              <span>Login</span>
+            </Link>
 
             {/* Mobile toggle - only show when menu is closed */}
             {!menuOpen && (
