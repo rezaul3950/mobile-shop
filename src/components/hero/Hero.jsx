@@ -51,7 +51,7 @@ function Hero() {
           </div>
           <div className="mobile-banner-image">
             <img 
-              src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&h=300&fit=crop" 
+              src="/mobile home.jpg" 
               alt="Wireless Headphones" 
             />
           </div>
