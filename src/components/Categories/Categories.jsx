@@ -113,6 +113,21 @@ function Categories() {
           <a href="#categories">See All</a>
         </div>
 
+        {/* Mobile Category Icons Grid */}
+        <div className="category-icons-grid lg:hidden">
+          {mobileCategories.map((cat, index) => {
+            const Icon = cat.icon
+            return (
+              <div key={index} className="category-icon-item">
+                <div className="icon-wrapper">
+                  <Icon size={24} />
+                </div>
+                <span>{cat.name}</span>
+              </div>
+            )
+          })}
+        </div>
+
         {/* Heading */}
 
         <div className="text-center mb-16">
@@ -171,23 +186,6 @@ function Categories() {
           </p>
 
 
-        </div>
-
-
-
-        {/* Mobile Category Icons Grid */}
-        <div className="category-icons-grid lg:hidden">
-          {mobileCategories.map((cat, index) => {
-            const Icon = cat.icon
-            return (
-              <div key={index} className="category-icon-item">
-                <div className="icon-wrapper">
-                  <Icon size={24} />
-                </div>
-                <span>{cat.name}</span>
-              </div>
-            )
-          })}
         </div>
 
         {/* Category Grid */}

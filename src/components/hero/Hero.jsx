@@ -42,6 +42,27 @@ function Hero() {
         />
       </div>
 
+      {/* Mobile Banner - Only visible on mobile */}
+      <div className="mobile-banner lg:hidden">
+        <div className="mobile-banner-content">
+          <div className="mobile-banner-text">
+            <h2>60% DISSCOUNT !</h2>
+            <p>FOR ALL<br />WIRLESS HEADOHONE</p>
+          </div>
+          <div className="mobile-banner-image">
+            <img 
+              src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&h=300&fit=crop" 
+              alt="Wireless Headphones" 
+            />
+          </div>
+        </div>
+        <div className="mobile-banner-dots">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
       {/* Content */}
       <div className="text-white space-y-4 mt-24">
         
