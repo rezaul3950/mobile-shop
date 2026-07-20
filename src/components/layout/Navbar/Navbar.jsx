@@ -256,18 +256,6 @@ function Navbar() {
               <span>Login</span>
             </Link>
 
-            {/* Mobile toggle - only show when menu is closed */}
-            {!menuOpen && (
-                <button 
-                  type="button"
-                  className="lg:hidden flex flex-col items-center justify-center gap-1.5 p-2 bg-transparent border border-white/10 rounded-lg hover:border-purple-500/30 transition-all cursor-pointer relative z-[110]"
-                  onClick={() => setMenuOpen(!menuOpen)}
-                >
-                <span className="block w-5 h-0.5 bg-slate-300 rounded transition-all duration-300"></span>
-                <span className="block w-5 h-0.5 bg-slate-300 rounded transition-all duration-300"></span>
-                <span className="block w-5 h-0.5 bg-slate-300 rounded transition-all duration-300"></span>
-              </button>
-            )}
           </div>
         </div>
       </div>
