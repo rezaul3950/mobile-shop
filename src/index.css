@@ -373,15 +373,24 @@
     font-weight: 500 !important;
   }
   
-  /* Hide sections */
-  .hero-section {
-    display: none !important;
-  }
-  
+  /* Hide sections - Keep hero-section visible for mobile banner */
   #about,
   #deals,
   #contact {
     display: none !important;
+  }
+  
+  /* Hide hero background - only show images */
+  #home {
+    background: transparent !important;
+  }
+  
+  #home .hero-section {
+    background: transparent !important;
+  }
+  
+  #home .lg\:hidden {
+    background: transparent !important;
   }
   
   /* ============================================
@@ -391,7 +400,7 @@
   /* Header with Discover and Premium Products */
   #home .mobile-banner {
     display: block !important;
-    padding: 16px !important;
+    padding: 0 !important;
     background: #0f172a !important;
   }
   
@@ -540,12 +549,13 @@
   /* Categories section */
   #categories {
     background: #0f172a !important;
-    padding: 16px !important;
+    padding: 0 !important;
     display: block !important;
   }
   
   #categories .text-center.mb-16 {
     display: none !important;
+    margin-bottom: 0 !important;
   }
   
   #categories .grid.grid-cols-1.sm\\:grid-cols-2.lg\\:grid-cols-3 {
@@ -577,7 +587,7 @@
   
   .category-icons-grid {
     display: grid !important;
-    grid-template-columns: repeat(4, 1fr) !important;
+    grid-template-columns: repeat(3, 1fr) !important;
     gap: 16px !important;
   }
   
@@ -611,13 +621,33 @@
   .category-icon-item .icon-wrapper svg {
     width: 24px !important;
     height: 24px !important;
-    color: #667eea !important;
+    color: #ffffff !important;
   }
   
   .category-icon-item span {
     font-size: 11px !important;
     color: #94a3b8 !important;
     text-align: center !important;
+  }
+  
+  .brand-logo-img {
+    width: 28px !important;
+    height: 28px !important;
+    object-fit: contain !important;
+  }
+  
+  /* Mobile hero brand logos */
+  .mobile-banner .flex.items-center.gap-4 {
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+  }
+  
+  .mobile-banner .flex.items-center.gap-4::-webkit-scrollbar {
+    display: none !important;
+  }
+  
+  .mobile-banner .w-12.h-12.text-blue-400 {
+    color: #ffffff !important;
   }
   
   /* Products section */

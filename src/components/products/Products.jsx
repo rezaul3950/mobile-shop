@@ -1,9 +1,55 @@
 import { useCart } from '../../context/CartContext'
 import { Link, useNavigate } from 'react-router-dom'
+import React, { useState } from 'react'
+
+// Simple product card component for mobile
+function MobileProductCard({ phone, index }) {
+  return (
+    <Link to={`/product/${phone.id}`} className="mobile-product-card block">
+      <div className="product-image-wrapper">
+        <img 
+          src={phone.image} 
+          alt={phone.name} 
+          loading="lazy" 
+        />
+      </div>
+      <div className="product-info">
+        <h3 className="product-name">{phone.name}</h3>
+        <div className="product-rating">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+          </svg>
+          <span>(4.8)</span>
+        </div>
+        <div className="product-price-row">
+          <div className="price-container">
+            <span className="current-price">${phone.price}</span>
+            <span className="original-price">${phone.price + 200}</span>
+          </div>
+          <button 
+            onClick={(e) => {
+              e.preventDefault()
+              e.stopPropagation()
+              // addToCart(phone) - will be passed as prop
+            }}
+            className="add-to-cart-btn"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+              <circle cx="9" cy="21" r="1"></circle>
+              <circle cx="20" cy="21" r="1"></circle>
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </Link>
+  )
+}
 
 function Products() {
   const { addToCart } = useCart()
   const navigate = useNavigate()
+  const [showAllHotDeals, setShowAllHotDeals] = useState(false)
   
   const phones = [
     {
@@ -72,53 +118,31 @@ function Products() {
       }}></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Mobile Section Header */}
+        {/* Mobile Section Header - Hot Deals */}
         <div className="best-offers-header lg:hidden">
+          <h3 className="section-title-mobile">Hot Deals</h3>
+          <a href="#shop" onClick={(e) => { e.preventDefault(); setShowAllHotDeals(!showAllHotDeals); }}>
+            {showAllHotDeals ? 'Show Less' : 'See All'}
+          </a>
+        </div>
+
+        {/* Mobile Products Grid - Hot Deals */}
+        <div className="mobile-products-grid lg:hidden">
+          {(showAllHotDeals ? phones.slice(0, 6) : phones.slice(0, 3)).map((phone, index) => (
+            <MobileProductCard key={phone.id} phone={phone} index={index} />
+          ))}
+        </div>
+
+        {/* Mobile Section Header - Best Offers */}
+        <div className="best-offers-header lg:hidden mt-8">
           <h3 className="section-title-mobile">Best Offers</h3>
           <a href="#shop">See All</a>
         </div>
 
-        {/* Mobile Products Grid */}
+        {/* Mobile Products Grid - Best Offers */}
         <div className="mobile-products-grid lg:hidden">
-          {phones.slice(0, 6).map((phone, index) => (
-            <div key={phone.id} className="mobile-product-card">
-              <div className="product-image-wrapper">
-                <img 
-                  src={phone.image} 
-                  alt={phone.name} 
-                  loading="lazy" 
-                />
-              </div>
-              <div className="product-info">
-                <h3 className="product-name">{phone.name}</h3>
-                <div className="product-rating">
-                  <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                  </svg>
-                  <span>(4.8)</span>
-                </div>
-                <div className="product-price-row">
-                  <div className="price-container">
-                    <span className="current-price">${phone.price}</span>
-                    <span className="original-price">${phone.price + 200}</span>
-                  </div>
-                  <button 
-                    onClick={(e) => {
-                      e.preventDefault()
-                      e.stopPropagation()
-                      addToCart(phone)
-                    }}
-                    className="add-to-cart-btn"
-                  >
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                      <circle cx="9" cy="21" r="1"></circle>
-                      <circle cx="20" cy="21" r="1"></circle>
-                      <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                    </svg>
-                  </button>
-                </div>
-              </div>
-            </div>
+          {phones.slice(3, 6).map((phone, index) => (
+            <MobileProductCard key={phone.id} phone={phone} index={index} />
           ))}
         </div>
 

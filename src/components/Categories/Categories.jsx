@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import {
   Smartphone,
   Tablet,
@@ -11,6 +12,9 @@ import {
   Video,
   Plus
 } from "lucide-react";
+import * as FaIcons from "react-icons/fa";
+import * as SiIcons from "react-icons/si";
+import * as SiBrands from "react-icons/si";
 
 
 function Categories() {
@@ -48,19 +52,21 @@ function Categories() {
     },
   ];
 
-  // Mobile category icons (shown only on mobile)
-  const mobileCategories = [
-    { name: "Phones", icon: Smartphone },
-    { name: "Laptops", icon: Monitor },
-    { name: "iPads", icon: Tablet },
-    { name: "Watches", icon: Watch },
-    { name: "Cameras", icon: Headphones },
-    { name: "Headphones", icon: Headphones },
-    { name: "Computers", icon: Monitor },
-    { name: "Televisions", icon: Tv },
-    { name: "Vidio Projector", icon: Video },
-    { name: "Accessories", icon: Plus },
+  // Mobile brand icons (shown only on mobile)
+  const allMobileCategories = [
+    { name: "iPhone", icon: FaIcons.FaApple },
+    { name: "Samsung", icon: SiIcons.SiSamsung },
+    { name: "Google", icon: FaIcons.FaGoogle },
+    { name: "OnePlus", icon: SiIcons.SiOneplus },
+    { name: "Xiaomi", icon: SiIcons.SiXiaomi },
+    { name: "Motorola", icon: SiIcons.SiMotorola },
+    { name: "Huawei", icon: SiBrands.SiHuawei },
+    { name: "Nokia", icon: SiBrands.SiNokia },
+    { name: "HTC", icon: SiBrands.SiHtc },
   ];
+  
+  const [showAllBrands, setShowAllBrands] = React.useState(false);
+  const mobileCategories = showAllBrands ? allMobileCategories : allMobileCategories.slice(0, 3);
 
 
   return (
@@ -69,7 +75,7 @@ function Categories() {
       id="categories"
       className="
       relative
-      py-24
+      py-4 lg:py-24
       bg-slate-950
       overflow-hidden
       "
@@ -107,20 +113,22 @@ function Categories() {
       >
 
 
-        {/* Section Title Mobile */}
-        <div className="best-offers-header lg:hidden">
-          <h3 className="section-title-mobile">Shop By Category</h3>
-          <a href="#categories">See All</a>
+        {/* Section Title Mobile - Hidden */}
+        <div className="best-offers-header lg:hidden hidden">
+          <h3 className="section-title-mobile">Top Brands</h3>
+          <a href="#categories" onClick={(e) => { e.preventDefault(); setShowAllBrands(!showAllBrands); }}>
+            {showAllBrands ? 'Show Less' : 'See All'}
+          </a>
         </div>
 
-        {/* Mobile Category Icons Grid */}
-        <div className="category-icons-grid lg:hidden">
+        {/* Mobile Category Icons Grid - Hidden */}
+        <div className="category-icons-grid lg:hidden hidden">
           {mobileCategories.map((cat, index) => {
-            const Icon = cat.icon
+            const Icon = cat.icon;
             return (
               <div key={index} className="category-icon-item">
                 <div className="icon-wrapper">
-                  <Icon size={24} />
+                  {Icon ? <Icon size={24} /> : <span>📱</span>}
                 </div>
                 <span>{cat.name}</span>
               </div>
@@ -188,11 +196,11 @@ function Categories() {
 
         </div>
 
-        {/* Category Grid */}
+        {/* Category Grid - Hidden on mobile */}
 
         <div
           className="
-          grid
+          hidden lg:grid
 
           grid-cols-1
           sm:grid-cols-2
@@ -369,9 +377,9 @@ function Categories() {
 
 
 
-        {/* Button */}
+        {/* Button - Hidden on mobile */}
 
-        <div className="flex justify-center mt-12">
+        <div className="hidden lg:flex justify-center mt-12">
 
 
           <button

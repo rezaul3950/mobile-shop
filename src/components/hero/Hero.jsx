@@ -2,6 +2,8 @@
 import heroImage from '../../assets/Hero_Section.png'
 import * as FaIcons from "react-icons/fa";
 import * as SiIcons from "react-icons/si";
+import React, { useState, useEffect } from 'react';
+
 const brands = [
   { name: "iPhone", icon: FaIcons.FaApple },
   { name: "Samsung", icon: SiIcons.SiSamsung },
@@ -9,9 +11,29 @@ const brands = [
   { name: "OnePlus", icon: SiIcons.SiOneplus },
   { name: "Xiaomi", icon: SiIcons.SiXiaomi },
   { name: "Motorola", icon: SiIcons.SiMotorola }, 
+  { name: "Huawei", icon: SiIcons.SiHuawei },
+  { name: "Nokia", icon: SiIcons.SiNokia },
+  { name: "HTC", icon: SiIcons.SiHtc },
 ];
 
 function Hero() {
+  const [currentBanner, setCurrentBanner] = useState(0);
+  
+  const bannerImages = [
+    '/mobile view banner 1.jpg',
+    '/mobile view banner 2.jpg',
+    '/mobile view banner 3.jpg',
+    '/mobile view banner 4.jpg'
+  ];
+
+  // Auto-slide banner every 3 seconds
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentBanner((prev) => (prev + 1) % bannerImages.length);
+    }, 3000);
+    return () => clearInterval(timer);
+  }, [bannerImages.length]);
+
   // Vercel deployment fix - brand icons
   return (
     <section 
@@ -31,40 +53,48 @@ function Hero() {
         <div className="absolute top-1/3 right-1/3 w-2 h-2 bg-blue-300 rounded-full opacity-60 animate-bounce" style={{ animationDelay: '1.5s', animationDuration: '4.5s' }}></div>
       </div>
       
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-8 items-start min-h-[60vh]">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-8 items-start lg:items-center min-h-[60vh]">
       
-      {/* Mobile Search Bar */}
-      <div className="mobile-search-bar lg:hidden">
-        <input 
-          type="text" 
-          placeholder="Search about you need"
-          className="w-full"
-        />
-      </div>
-
       {/* Mobile Banner - Only visible on mobile */}
-      <div className="mobile-banner lg:hidden">
-        <div className="mobile-banner-content">
-          <div className="mobile-banner-text">
-            <h2>60% DISSCOUNT !</h2>
-            <p>FOR ALL<br />WIRLESS HEADOHONE</p>
+      <div className="lg:hidden">
+        {/* Animated Banner Carousel */}
+        <div className="relative w-full aspect-square overflow-hidden">
+          {bannerImages.map((banner, index) => (
+            <div
+              key={index}
+              className="absolute inset-0 transition-all duration-700 ease-in-out"
+              style={{
+                transform: `translateX(${(index - currentBanner) * 100}%)`,
+                opacity: index === currentBanner ? 1 : 0,
+              }}
+            >
+              <img 
+                src={banner} 
+                alt={`Banner ${index + 1}`}
+                className="w-full h-full object-contain"
+              />
+            </div>
+          ))}
+          
+          {/* Banner Dots */}
+          <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex gap-2">
+            {bannerImages.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentBanner(index)}
+                className="w-2 h-2 rounded-full transition-all duration-300"
+                style={{
+                  backgroundColor: index === currentBanner ? '#667eea' : 'rgba(255, 255, 255, 0.5)',
+                  width: index === currentBanner ? '16px' : '8px',
+                }}
+              />
+            ))}
           </div>
-          <div className="mobile-banner-image">
-            <img 
-              src="/mobile home.jpg" 
-              alt="Wireless Headphones" 
-            />
-          </div>
-        </div>
-        <div className="mobile-banner-dots">
-          <span></span>
-          <span></span>
-          <span></span>
         </div>
       </div>
 
-      {/* Content */}
-      <div className="text-white space-y-4 mt-24">
+      {/* Content - Desktop only */}
+      <div className="hidden lg:block text-white space-y-4 mt-24">
         
         {/* Badge */}
         <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-500/40 to-purple-500/40 backdrop-blur-md border border-blue-400/50 rounded-full text-sm font-medium text-white">
@@ -145,8 +175,8 @@ function Hero() {
         </div>
       </div>
         
-        {/* Visual */}
-        <div className="relative flex items-center justify-center">
+        {/* Visual - Desktop only */}
+        <div className="hidden lg:block relative flex items-center justify-center">
           {/* Phone image */}
           <div className="relative">
             <img
@@ -177,64 +207,57 @@ function Hero() {
         </div>
       </div>
 
+      {/* Top Brands - Desktop */}
+      <div className="hidden lg:flex justify-center py-12 px-6">
+        <div className="flex items-center gap-8 px-10 py-5 rounded-full bg-white/5 border border-white/10 backdrop-blur-xl shadow-[0_8px_30px_rgb(0,0,0,0.4)]">
+          
+          {/* "TOP BRANDS" text */}
+          <div className="flex items-center gap-2 pr-8 border-r border-white/10">
+            <span className="text-white font-black tracking-widest text-sm md:text-base uppercase">
+              Top Brands
+            </span>
+          </div>
 
-<div className="flex justify-center py-12 px-6">
-  {/* মূল নেভবার স্টাইল বক্স - আরও বড় এবং প্রিমিয়াম */}
-  <div className="flex items-center gap-8 px-10 py-5 rounded-full bg-white/5 border border-white/10 backdrop-blur-xl shadow-[0_8px_30px_rgb(0,0,0,0.4)]">
-    
-    {/* "TOP BRANDS" লেখাটি - হাইলাইটেড স্টাইল */}
-    <div className="flex items-center gap-2 pr-8 border-r border-white/10">
-      
-      <span className="text-white font-black tracking-widest text-sm md:text-base uppercase">
-        Top Brands
-      </span>
-    </div>
-
-    {/* ব্র্যান্ডের লিস্ট - আধুনিক হোভার ইফেক্ট */}
-    <div className="flex items-center gap-8">
-      {brands.map((brand, i) => {
-
-  const Icon = brand.icon;
-
-  return (
-    <a
-      key={i}
-      href="#"
-      className="
-      group
-      flex items-center gap-2
-      text-slate-300 
-      font-semibold 
-      text-sm md:text-base 
-      hover:text-white 
-      cursor-pointer 
-      transition-all 
-      duration-300 
-      hover:scale-110
-      "
-    >
-
-      <span className="text-slate-300 group-hover:text-blue-400 transition inline-flex items-center">
-         {Icon ? (
-            <Icon 
-            size={24}
-              className="group-hover:scale-110 transition"/>) 
-              : (
-            <span>📱</span>
-           )}
-       </span>
-
-      <span className="text-slate-300 group-hover:text-white transition">
-        {brand.name}
-      </span>
-
-    </a>
-  );
-
-})}
-    </div>
-  </div>
-</div>
+          {/* Brand icons list */}
+          <div className="flex items-center gap-6">
+            {brands.map((brand, i) => {
+              const Icon = brand.icon;
+              return (
+                <a
+                  key={i}
+                  href="#"
+                  className="
+                  group
+                  flex items-center gap-2
+                  text-slate-300 
+                  font-semibold 
+                  text-sm md:text-base 
+                  hover:text-white 
+                  cursor-pointer 
+                  transition-all 
+                  duration-300 
+                  hover:scale-110
+                  "
+                >
+                  <span className="text-slate-300 group-hover:text-blue-400 transition inline-flex items-center">
+                    {Icon ? (
+                      <Icon 
+                        size={24}
+                        className="group-hover:scale-110 transition"
+                      />
+                    ) : (
+                      <span>📱</span>
+                    )}
+                  </span>
+                  <span className="text-slate-300 group-hover:text-white transition">
+                    {brand.name}
+                  </span>
+                </a>
+              );
+            })}
+          </div>
+        </div>
+      </div>
       
    
     </section>
