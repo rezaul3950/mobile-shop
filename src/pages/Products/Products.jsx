@@ -129,7 +129,7 @@ function ProductsPage() {
   ]
 
   return (
-    <section className="pt-24 pb-20 bg-gradient-to-b from-slate-900 via-slate-900 to-indigo-950 relative overflow-hidden min-h-screen">
+    <section id="shop" className="pt-24 pb-20 bg-gradient-to-b from-slate-900 via-slate-900 to-indigo-950 relative overflow-hidden min-h-screen">
       {/* Animated Background Effects */}
       <div className="absolute inset-0 opacity-40">
         <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/30 rounded-full blur-3xl animate-pulse"></div>
