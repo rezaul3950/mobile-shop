@@ -31,7 +31,9 @@ function MobileBottomNav() {
             to={item.path}
             className={`mobile-nav-item ${active ? 'active' : ''}`}
           >
-            <Icon />
+            <div className="nav-icon-wrapper">
+              <Icon />
+            </div>
             <span>{item.label}</span>
           </Link>
         )
