@@ -1,4 +1,4 @@
-import { FiStore, FiMapPin, FiStar, FiClock } from 'react-icons/fi'
+import { FiShoppingBag, FiMapPin, FiStar, FiClock } from 'react-icons/fi'
 
 function Shops() {
   const shops = [
@@ -37,7 +37,7 @@ function Shops() {
         {/* Header */}
         <div className="text-center mb-8">
           <div className="inline-flex items-center justify-center w-16 h-16 mb-4 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-full border-2 border-purple-400/30">
-            <FiStore className="text-3xl text-purple-400" />
+            <FiShoppingBag className="text-3xl text-purple-400" />
           </div>
           <h1 className="text-3xl font-black text-white mb-2">Our Shops</h1>
           <p className="text-sm text-slate-400">Find the best mobile stores near you</p>
@@ -94,7 +94,7 @@ function Shops() {
                     <span className="text-sm font-bold text-white">{shop.rating}</span>
                   </div>
                   <div className="flex items-center gap-1">
-                    <FiStore className="text-slate-400 text-sm" />
+                    <FiShoppingBag className="text-slate-400 text-sm" />
                     <span className="text-xs text-slate-400">{shop.products} products</span>
                   </div>
                 </div>
