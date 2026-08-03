@@ -178,15 +178,24 @@ function Login() {
               </div>
             )}
 
-            {/* Submit Button */}
+            {/* Submit Button - Premium Design */}
             <button
               type="submit"
-              className="w-full py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-xl font-semibold hover:-translate-y-1 transition-all shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40 flex items-center justify-center gap-2"
+              className="group relative w-full py-4 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white rounded-xl font-bold text-base hover:shadow-[0_12px_40px_rgba(139,92,246,0.5)] hover:scale-105 active:scale-95 transition-all duration-300 overflow-hidden flex items-center justify-center gap-2"
             >
-              <span>{isLogin ? 'Login' : 'Create Account'}</span>
-              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+              {/* Shimmer Effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+              
+              {/* Button Content */}
+              <span className="relative z-10">{isLogin ? 'Login' : 'Create Account'}</span>
+              
+              {/* Arrow Icon */}
+              <svg className="relative z-10 w-5 h-5 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                 <path d="M5 12h14M12 5l7 7-7 7"></path>
               </svg>
+
+              {/* Pulse Ring */}
+              <div className="absolute inset-0 rounded-xl border-2 border-white/30 opacity-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500"></div>
             </button>
           </form>
 
