@@ -1,15 +1,14 @@
 import { Link, useLocation } from 'react-router-dom'
-import { FiHome, FiShoppingBag, FiGrid, FiHeart, FiUser } from 'react-icons/fi'
+import { FiHome, FiGrid, FiShoppingCart, FiUser } from 'react-icons/fi'
 
 function MobileBottomNav() {
   const location = useLocation()
 
   const navItems = [
     { path: '/', icon: FiHome, label: 'Home' },
-    { path: '/products', icon: FiShoppingBag, label: 'Orders' },
-    { path: '/products', icon: FiGrid, label: 'Shops' },
-    { path: '/products', icon: FiHeart, label: 'Favorite' },
-    { path: '/products', icon: FiUser, label: 'Profile' }
+    { path: '/products', icon: FiGrid, label: 'Categories' },
+    { path: '/cart', icon: FiShoppingCart, label: 'Cart' },
+    { path: '/profile', icon: FiUser, label: 'Profile' }
   ]
 
   const isActive = (path) => {
