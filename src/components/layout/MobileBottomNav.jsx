@@ -6,7 +6,7 @@ function MobileBottomNav() {
 
   const navItems = [
     { path: '/', icon: FiHome, label: 'Home' },
-    { path: '/products', icon: FiGrid, label: 'Categories' },
+    { path: '/categories', icon: FiGrid, label: 'Categories' },
     { path: '/profile', icon: FiUser, label: 'Profile' }
   ]
 
