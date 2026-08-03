@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { FaFire, FaClock, FaTag, FaArrowRight } from 'react-icons/fa'
+import { FaFire, FaClock, FaTag, FaArrowRight, FaBolt, FaShoppingCart } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 
 function Deals() {
@@ -72,7 +72,7 @@ function Deals() {
   return (
     <section 
       id="deals" 
-      className="relative py-24 bg-gradient-to-br from-slate-950 via-purple-950 to-slate-950 overflow-hidden"
+      className="relative py-16 bg-gradient-to-br from-slate-950 via-purple-950 to-slate-950 overflow-hidden lg:py-24"
     >
       {/* Animated Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -83,7 +83,7 @@ function Deals() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 lg:mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-orange-500/40 to-red-500/40 backdrop-blur-md border border-orange-400/50 rounded-full text-sm font-medium text-white mb-6">
             <FaFire className="text-orange-400" />
             <span>LIMITED TIME OFFERS</span>
@@ -122,8 +122,8 @@ function Deals() {
           </div>
         </div>
 
-        {/* Deals Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        {/* Deals Grid - Mobile: 2 columns, Desktop: 4 columns */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6 mb-12">
           {deals.map((deal) => (
             <Link
               key={deal.id}
@@ -148,39 +148,39 @@ function Deals() {
               </div>
 
                {/* Product Image */}
-               <div className="relative h-48 flex items-center justify-center bg-gradient-to-br from-white/5 to-white/10 p-6 overflow-hidden">
-                 <img 
-                   src={deal.image} 
-                   alt={deal.name}
-                   className="w-full h-full object-contain group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300"
-                   loading="lazy"
-                 />
-               </div>
+               <div className="relative h-40 md:h-48 flex items-center justify-center bg-gradient-to-br from-white/5 to-white/10 p-4 md:p-6 overflow-hidden">
+                  <img 
+                    src={deal.image} 
+                    alt={deal.name}
+                    className="w-full h-full object-contain group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300"
+                    loading="lazy"
+                  />
+                </div>
 
               {/* Product Info */}
-              <div className="relative p-6">
-                <h3 className="text-lg font-bold text-white mb-2 group-hover:text-orange-300 transition-colors">
+              <div className="relative p-4 md:p-6">
+                <h3 className="text-base md:text-lg font-bold text-white mb-2 group-hover:text-orange-300 transition-colors">
                   {deal.name}
                 </h3>
 
                 {/* Price */}
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="text-2xl font-black text-white">
+                <div className="flex items-center gap-2 md:gap-3 mb-3 md:mb-4">
+                  <span className="text-lg md:text-2xl font-black text-white">
                     ${deal.dealPrice}
                   </span>
-                  <span className="text-sm text-slate-400 line-through">
+                  <span className="text-xs md:text-sm text-slate-400 line-through">
                     ${deal.originalPrice}
                   </span>
-                  <span className="text-sm font-semibold text-green-400">
+                  <span className="text-xs md:text-sm font-semibold text-green-400">
                     Save ${deal.originalPrice - deal.dealPrice}
                   </span>
                 </div>
 
                 {/* CTA Button */}
-                <button className="w-full py-3 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-xl font-semibold hover:shadow-lg hover:shadow-orange-500/50 hover:scale-105 transition-all flex items-center justify-center gap-2">
-                  <FaTag className="text-sm" />
+                <button className="w-full py-2 md:py-3 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-xl font-semibold text-xs md:text-sm hover:shadow-lg hover:shadow-orange-500/50 hover:scale-105 transition-all flex items-center justify-center gap-2">
+                  <FaShoppingCart className="text-xs md:text-sm" />
                   <span>Grab Deal</span>
-                  <FaArrowRight className="text-sm group-hover:translate-x-1 transition-transform" />
+                  <FaArrowRight className="text-xs md:text-sm group-hover:translate-x-1 transition-transform" />
                 </button>
               </div>
             </Link>

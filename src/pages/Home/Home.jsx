@@ -1,4 +1,5 @@
 import Hero from '../../components/hero/Hero'
+import TopBrands from '../../components/top-brands/TopBrands'
 import Categories from "../../components/Categories/Categories";
 import Deals from '../../components/deals/Deals'
 import Products from '../../components/products/Products'
@@ -9,6 +10,7 @@ function Home() {
   return (
     <>
       <Hero />
+      <TopBrands />
       <About />
       <Categories />
       <Deals />

@@ -1,20 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
-  Smartphone,
-  Tablet,
-  Apple,
-  Headphones,
-  Watch,
-  ArrowRight,
-  SmartphoneIcon,
-  Monitor,
-  Tv,
-  Video,
-  Plus
+  ArrowRight
 } from "lucide-react";
-import * as FaIcons from "react-icons/fa";
-import * as SiIcons from "react-icons/si";
-import * as SiBrands from "react-icons/si";
 
 
 function Categories() {
@@ -51,23 +38,6 @@ function Categories() {
       image: "https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=400&h=400&fit=crop",
     },
   ];
-
-  // Mobile brand icons (shown only on mobile)
-  const allMobileCategories = [
-    { name: "iPhone", icon: FaIcons.FaApple },
-    { name: "Samsung", icon: SiIcons.SiSamsung },
-    { name: "Google", icon: FaIcons.FaGoogle },
-    { name: "OnePlus", icon: SiIcons.SiOneplus },
-    { name: "Xiaomi", icon: SiIcons.SiXiaomi },
-    { name: "Motorola", icon: SiIcons.SiMotorola },
-    { name: "Huawei", icon: SiBrands.SiHuawei },
-    { name: "Nokia", icon: SiBrands.SiNokia },
-    { name: "HTC", icon: SiBrands.SiHtc },
-  ];
-  
-  const [showAllBrands, setShowAllBrands] = React.useState(false);
-  const mobileCategories = showAllBrands ? allMobileCategories : allMobileCategories.slice(0, 3);
-
 
   return (
 
@@ -112,29 +82,6 @@ function Categories() {
         "
       >
 
-
-        {/* Section Title Mobile - Hidden */}
-        <div className="best-offers-header lg:hidden hidden">
-          <h3 className="section-title-mobile">Top Brands</h3>
-          <a href="#categories" onClick={(e) => { e.preventDefault(); setShowAllBrands(!showAllBrands); }}>
-            {showAllBrands ? 'Show Less' : 'See All'}
-          </a>
-        </div>
-
-        {/* Mobile Category Icons Grid - Hidden */}
-        <div className="category-icons-grid lg:hidden hidden">
-          {mobileCategories.map((cat, index) => {
-            const Icon = cat.icon;
-            return (
-              <div key={index} className="category-icon-item">
-                <div className="icon-wrapper">
-                  {Icon ? <Icon size={24} /> : <span>📱</span>}
-                </div>
-                <span>{cat.name}</span>
-              </div>
-            )
-          })}
-        </div>
 
         {/* Heading */}
 
