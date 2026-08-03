@@ -247,13 +247,22 @@ function Navbar() {
               )}
             </Link>
 
-            <Link to="/login" className="flex items-center gap-2 px-4 sm:px-6 py-2.5 bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-600 text-white rounded-xl text-sm font-bold hover:shadow-2xl hover:shadow-cyan-500/50 hover:scale-105 active:scale-95 transition-all duration-300 border border-cyan-400/30">
-              <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+            <Link to="/login" className="group relative flex items-center gap-2 px-4 sm:px-6 py-2.5 bg-gradient-to-r from-pink-600 via-purple-600 to-indigo-600 text-white rounded-xl text-sm font-bold hover:shadow-[0_12px_40px_rgba(168,85,247,0.5)] hover:scale-105 active:scale-95 transition-all duration-300 overflow-hidden border border-purple-400/30">
+              {/* Shimmer Effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+              
+              {/* Icon */}
+              <svg className="relative z-10 w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                 <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
                 <polyline points="10 17 15 12 10 7"></polyline>
                 <line x1="15" y1="12" x2="3" y2="12"></line>
               </svg>
-              <span>Login</span>
+              
+              {/* Text */}
+              <span className="relative z-10">Login</span>
+
+              {/* Pulse Ring */}
+              <div className="absolute inset-0 rounded-xl border-2 border-white/30 opacity-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500"></div>
             </Link>
 
           </div>
