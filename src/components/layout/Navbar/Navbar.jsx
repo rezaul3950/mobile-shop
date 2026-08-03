@@ -247,22 +247,25 @@ function Navbar() {
               )}
             </Link>
 
-            <Link to="/login" className="group relative flex items-center gap-2 px-4 sm:px-6 py-2.5 bg-gradient-to-r from-pink-600 via-purple-600 to-indigo-600 text-white rounded-xl text-sm font-bold hover:shadow-[0_12px_40px_rgba(168,85,247,0.5)] hover:scale-105 active:scale-95 transition-all duration-300 overflow-hidden border border-purple-400/30">
-              {/* Shimmer Effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+            <Link to="/login" className="group relative flex items-center gap-2 px-4 sm:px-6 py-2.5 bg-white/10 backdrop-blur-xl text-white rounded-xl text-sm font-bold hover:bg-white/20 hover:scale-105 active:scale-95 transition-all duration-300 overflow-hidden border-2 border-white/30 hover:border-white/60">
+              {/* Animated Gradient Border */}
+              <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+              
+              {/* Glow Effect */}
+              <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-blue-500/50 via-purple-500/50 to-pink-500/50 blur-xl opacity-0 group-hover:opacity-70 transition-opacity duration-300 -z-20"></div>
               
               {/* Icon */}
-              <svg className="relative z-10 w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+              <svg className="relative z-10 w-4 h-4 group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                 <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
                 <polyline points="10 17 15 12 10 7"></polyline>
                 <line x1="15" y1="12" x2="3" y2="12"></line>
               </svg>
               
               {/* Text */}
-              <span className="relative z-10">Login</span>
+              <span className="relative z-10 group-hover:text-white transition-colors">Login</span>
 
-              {/* Pulse Ring */}
-              <div className="absolute inset-0 rounded-xl border-2 border-white/30 opacity-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500"></div>
+              {/* Corner Accent */}
+              <div className="absolute top-0 right-0 w-2 h-2 bg-gradient-to-br from-blue-400 to-purple-400 rounded-bl-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </Link>
 
           </div>
