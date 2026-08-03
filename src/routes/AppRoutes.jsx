@@ -8,6 +8,7 @@ import Login from '../pages/Login/Login'
 import Orders from '../pages/Orders/Orders'
 import Shops from '../pages/Shops/Shops'
 import Categories from '../pages/Categories/Categories'
+import Favorite from '../pages/Favorite/Favorite'
 import Profile from '../pages/Profile/Profile'
 
 function AppRoutes() {
@@ -22,6 +23,7 @@ function AppRoutes() {
       <Route path="/login" element={<Login />} />
       <Route path="/orders" element={<Orders />} />
       <Route path="/shops" element={<Shops />} />
+      <Route path="/favorite" element={<Favorite />} />
       <Route path="/profile" element={<Profile />} />
     </Routes>
   )

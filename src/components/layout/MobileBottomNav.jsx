@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom'
-import { FiHome, FiGrid, FiUser } from 'react-icons/fi'
+import { FiHome, FiGrid, FiStore, FiHeart, FiUser } from 'react-icons/fi'
 
 function MobileBottomNav() {
   const location = useLocation()
@@ -7,6 +7,8 @@ function MobileBottomNav() {
   const navItems = [
     { path: '/', icon: FiHome, label: 'Home' },
     { path: '/categories', icon: FiGrid, label: 'Categories' },
+    { path: '/shops', icon: FiStore, label: 'Shops' },
+    { path: '/favorite', icon: FiHeart, label: 'Favorite' },
     { path: '/profile', icon: FiUser, label: 'Profile' }
   ]
 
