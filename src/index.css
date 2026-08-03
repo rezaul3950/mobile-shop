@@ -324,7 +324,7 @@
     display: none !important;
   }
   
-  /* Bottom navigation - Premium Modern Design */
+  /* Bottom navigation - Ultra Premium Modern Design */
   .mobile-bottom-nav {
     display: flex !important;
     position: fixed !important;
@@ -333,18 +333,19 @@
     transform: translateX(-50%) !important;
     width: calc(100% - 24px) !important;
     max-width: 366px !important;
-    height: 64px !important;
+    height: 68px !important;
     background: rgba(15, 23, 42, 0.95) !important;
     backdrop-filter: blur(20px) !important;
     -webkit-backdrop-filter: blur(20px) !important;
-    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
     border-radius: 24px !important;
     z-index: 9999 !important;
     justify-content: space-around !important;
     align-items: center !important;
-    padding: 8px 4px !important;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 
-                0 0 0 1px rgba(255, 255, 255, 0.05) !important;
+    padding: 10px 6px !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6), 
+                0 0 0 1px rgba(255, 255, 255, 0.1),
+                inset 0 1px 0 0 rgba(255, 255, 255, 0.1) !important;
   }
   
   .mobile-nav-item {
@@ -353,10 +354,10 @@
     align-items: center !important;
     justify-content: center !important;
     gap: 6px !important;
-    padding: 8px 12px !important;
+    padding: 8px 14px !important;
     color: #64748b !important;
     text-decoration: none !important;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
     flex: 1 !important;
     position: relative !important;
     border-radius: 16px !important;
@@ -367,54 +368,62 @@
   }
   
   .nav-icon-wrapper {
-    width: 40px !important;
-    height: 40px !important;
+    width: 44px !important;
+    height: 44px !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    border-radius: 12px !important;
+    border-radius: 14px !important;
     background: transparent !important;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
     position: relative !important;
   }
   
   .mobile-nav-item.active .nav-icon-wrapper {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
-    box-shadow: 0 4px 16px rgba(102, 126, 234, 0.5) !important;
-    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6),
+                0 0 0 1px rgba(255, 255, 255, 0.2) !important;
+    transform: translateY(-3px) !important;
   }
   
   .nav-icon-wrapper svg {
-    width: 22px !important;
-    height: 22px !important;
-    transition: all 0.3s ease !important;
+    width: 24px !important;
+    height: 24px !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
   }
   
   .mobile-nav-item.active .nav-icon-wrapper svg {
     color: #ffffff !important;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2)) !important;
+    filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.3)) !important;
+    transform: scale(1.1) !important;
   }
   
   .mobile-nav-item span {
     font-size: 10px !important;
     font-weight: 600 !important;
-    letter-spacing: 0.3px !important;
-    transition: all 0.3s ease !important;
+    letter-spacing: 0.4px !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
   }
   
   .mobile-nav-item.active span {
     color: #ffffff !important;
     font-weight: 700 !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
   }
   
-  /* Hover effects for non-active items */
+  /* Enhanced hover effects */
   .mobile-nav-item:not(.active):hover .nav-icon-wrapper {
-    background: rgba(255, 255, 255, 0.05) !important;
-    transform: translateY(-1px) !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
   }
   
   .mobile-nav-item:not(.active):hover {
-    color: #94a3b8 !important;
+    color: #cbd5e1 !important;
+  }
+  
+  .mobile-nav-item:not(.active):hover svg {
+    transform: scale(1.05) !important;
   }
   
   /* Hide sections - Keep hero-section visible for mobile banner */
