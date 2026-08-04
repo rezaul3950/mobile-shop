@@ -50,6 +50,9 @@ function Categories() {
       'Accessories': '/category/accessories',
       'Wearables': '/category/wearables'
     }
+    // Use React Router navigate for proper client-side routing
+    // Scroll to top first to prevent any scroll conflicts
+    window.scrollTo(0, 0)
     navigate(categoryRoutes[categoryName] || '/products')
   }
 
@@ -209,7 +212,19 @@ function Categories() {
                   cursor-pointer
 
                   "
-                  onClick={() => handleCategoryClick(item.name)}
+                  onClick={(e) => {
+                    e.preventDefault()
+                    e.stopPropagation()
+                    handleCategoryClick(item.name)
+                  }}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault()
+                      handleCategoryClick(item.name)
+                    }
+                  }}
+                  tabIndex={0}
+                  role="button"
                 >
 
 
