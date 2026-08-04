@@ -60,33 +60,44 @@ function Navbar() {
   }
 
   useEffect(() => {
-    // Only run scroll spy on home page
-    if (location.pathname !== '/') {
-      return
-    }
-    
-    const onScroll = () => {
-      setScrolled(window.scrollY > 16)
-      
-      // Update active section based on scroll position
-      const sections = ['home', 'about', 'categories', 'deals', 'shop', 'contact']
-      const scrollPosition = window.scrollY + 100
-      
-      for (const sectionId of sections) {
-        const element = document.getElementById(sectionId)
-        if (element) {
-          const { offsetTop, offsetHeight } = element
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-            setActiveSection(sectionId)
-            break
+    // Set active section based on current path
+    if (location.pathname === '/') {
+      // Only run scroll spy on home page
+      const onScroll = () => {
+        setScrolled(window.scrollY > 16)
+        
+        // Update active section based on scroll position
+        const sections = ['home', 'about', 'categories', 'deals', 'shop', 'contact']
+        const scrollPosition = window.scrollY + 100
+        
+        for (const sectionId of sections) {
+          const element = document.getElementById(sectionId)
+          if (element) {
+            const { offsetTop, offsetHeight } = element
+            if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+              setActiveSection(sectionId)
+              break
+            }
           }
         }
       }
+      
+      window.addEventListener('scroll', onScroll, { passive: true })
+      onScroll()
+      return () => window.removeEventListener('scroll', onScroll)
+    } else if (location.pathname.startsWith('/category')) {
+      // Set Categories as active when on any category page
+      setActiveSection('categories')
+    } else if (location.pathname === '/products' || location.pathname === '/shops') {
+      // Set Shop as active for products and shops pages
+      setActiveSection('shop')
+    } else if (location.pathname === '/orders' || location.pathname === '/favorite') {
+      // Set Shop as active for orders and favorite pages
+      setActiveSection('shop')
+    } else if (location.pathname === '/profile') {
+      // Set a default for profile page
+      setActiveSection('home')
     }
-    
-    window.addEventListener('scroll', onScroll, { passive: true })
-    onScroll()
-    return () => window.removeEventListener('scroll', onScroll)
   }, [location.pathname])
 
   return (
@@ -137,7 +148,7 @@ function Navbar() {
                 }
               }} 
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-                activeSection === 'categories' && location.pathname === '/'
+                activeSection === 'categories'
                   ? 'text-white bg-purple-500/20 shadow-lg shadow-purple-500/20'
                   : 'text-slate-300 hover:text-white hover:bg-purple-500/10'
               }`}
