@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 function CategoryTablets() {
   const products = [
     {
-      id: 1,
+      id: 101,
       name: 'iPad Pro 12.9"',
       brand: 'Apple',
       price: 1099,
@@ -12,7 +12,7 @@ function CategoryTablets() {
       image: 'https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=400&h=400&fit=crop',
     },
     {
-      id: 2,
+      id: 102,
       name: 'Galaxy Tab S9',
       brand: 'Samsung',
       price: 899,
@@ -20,7 +20,7 @@ function CategoryTablets() {
       image: 'https://images.unsplash.com/photo-1561154464-82e9adf32764?w=400&h=400&fit=crop',
     },
     {
-      id: 3,
+      id: 103,
       name: 'Xiaomi Pad 6',
       brand: 'Xiaomi',
       price: 499,

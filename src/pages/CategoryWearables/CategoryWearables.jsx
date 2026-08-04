@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 function CategoryWearables() {
   const products = [
     {
-      id: 1,
+      id: 501,
       name: 'Apple Watch Ultra',
       brand: 'Apple',
       price: 799,
@@ -12,7 +12,7 @@ function CategoryWearables() {
       image: 'https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=400&h=400&fit=crop',
     },
     {
-      id: 2,
+      id: 502,
       name: 'Galaxy Watch 6',
       brand: 'Samsung',
       price: 399,
@@ -20,7 +20,7 @@ function CategoryWearables() {
       image: 'https://images.unsplash.com/photo-1575311373937-040b8e1fd5b6?w=400&h=400&fit=crop',
     },
     {
-      id: 3,
+      id: 503,
       name: 'Fitbit Charge 5',
       brand: 'Fitbit',
       price: 179,

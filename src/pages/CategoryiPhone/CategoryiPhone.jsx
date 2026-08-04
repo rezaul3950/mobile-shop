@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 function CategoryiPhone() {
   const products = [
     {
-      id: 1,
+      id: 201,
       name: 'iPhone 15 Pro Max',
       brand: 'Apple',
       price: 1199,
@@ -12,7 +12,7 @@ function CategoryiPhone() {
       image: 'https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=400&h=400&fit=crop',
     },
     {
-      id: 2,
+      id: 202,
       name: 'iPhone 15 Pro',
       brand: 'Apple',
       price: 999,
@@ -20,7 +20,7 @@ function CategoryiPhone() {
       image: 'https://images.unsplash.com/photo-1696446701796-da75a4a0e0e5?w=400&h=400&fit=crop',
     },
     {
-      id: 3,
+      id: 203,
       name: 'iPhone 15',
       brand: 'Apple',
       price: 799,

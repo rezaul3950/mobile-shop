@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 function CategoryAccessories() {
   const products = [
     {
-      id: 1,
+      id: 401,
       name: 'Wireless Earbuds Pro',
       brand: 'TechBrand',
       price: 199,
@@ -12,7 +12,7 @@ function CategoryAccessories() {
       image: 'https://images.unsplash.com/photo-1572569028738-411a196cb574?w=400&h=400&fit=crop',
     },
     {
-      id: 2,
+      id: 402,
       name: 'Fast Charger 65W',
       brand: 'PowerTech',
       price: 49,
@@ -20,7 +20,7 @@ function CategoryAccessories() {
       image: 'https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=400&h=400&fit=crop',
     },
     {
-      id: 3,
+      id: 403,
       name: 'Phone Case Premium',
       brand: 'ProtectCo',
       price: 39,

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 function CategorySamsung() {
   const products = [
     {
-      id: 1,
+      id: 301,
       name: 'Galaxy S24 Ultra',
       brand: 'Samsung',
       price: 1299,
@@ -12,7 +12,7 @@ function CategorySamsung() {
       image: 'https://images.unsplash.com/photo-1610945265064-0e34e5519efa?w=400&h=400&fit=crop',
     },
     {
-      id: 2,
+      id: 302,
       name: 'Galaxy S24+',
       brand: 'Samsung',
       price: 999,
@@ -20,7 +20,7 @@ function CategorySamsung() {
       image: 'https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=400&h=400&fit=crop',
     },
     {
-      id: 3,
+      id: 303,
       name: 'Galaxy Z Fold 5',
       brand: 'Samsung',
       price: 1799,
