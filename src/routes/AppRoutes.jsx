@@ -14,6 +14,9 @@ import CategorySmartphones from '../pages/CategorySmartphones/CategorySmartphone
 import CategoryTablets from '../pages/CategoryTablets/CategoryTablets'
 import CategoryiPhone from '../pages/CategoryiPhone/CategoryiPhone'
 import CategorySamsung from '../pages/CategorySamsung/CategorySamsung'
+import CategoryGoogle from '../pages/CategoryGoogle/CategoryGoogle'
+import CategoryMotorola from '../pages/CategoryMotorola/CategoryMotorola'
+import CategoryHuawei from '../pages/CategoryHuawei/CategoryHuawei'
 import CategoryAccessories from '../pages/CategoryAccessories/CategoryAccessories'
 import CategoryWearables from '../pages/CategoryWearables/CategoryWearables'
 
@@ -27,6 +30,9 @@ function AppRoutes() {
       <Route path="/category/tablets" element={<CategoryTablets />} />
       <Route path="/category/iphone" element={<CategoryiPhone />} />
       <Route path="/category/samsung" element={<CategorySamsung />} />
+      <Route path="/category/google" element={<CategoryGoogle />} />
+      <Route path="/category/motorola" element={<CategoryMotorola />} />
+      <Route path="/category/huawei" element={<CategoryHuawei />} />
       <Route path="/category/accessories" element={<CategoryAccessories />} />
       <Route path="/category/wearables" element={<CategoryWearables />} />
       <Route path="/product/:id" element={<ProductDetails />} />

@@ -185,6 +185,99 @@ const phones = [
     image:
       'https://images.unsplash.com/photo-1576243345690-4e4b79b63288?w=400&h=400&fit=crop',
   },
+  // Google (IDs 601-603)
+  {
+    id: 601,
+    name: 'Pixel 8 Pro',
+    brand: 'Google',
+    price: 899,
+    storage: '128GB',
+    color: '#10b981',
+    image:
+      'https://images.unsplash.com/photo-1598327105666-5b1730a3d066?w=400&h=400&fit=crop',
+  },
+  {
+    id: 602,
+    name: 'Pixel 8',
+    brand: 'Google',
+    price: 699,
+    storage: '128GB',
+    color: '#10b981',
+    image:
+      'https://images.unsplash.com/photo-1598327105666-5b1730a3d066?w=400&h=400&fit=crop&q=80',
+  },
+  {
+    id: 603,
+    name: 'Pixel 7a',
+    brand: 'Google',
+    price: 499,
+    storage: '128GB',
+    color: '#10b981',
+    image:
+      'https://images.unsplash.com/photo-1598327105666-5b1730a3d066?w=400&h=400&fit=crop&q=90',
+  },
+  // Motorola (IDs 701-703)
+  {
+    id: 701,
+    name: 'Moto Edge 40 Pro',
+    brand: 'Motorola',
+    price: 799,
+    storage: '256GB',
+    color: '#06b6d4',
+    image:
+      'https://images.unsplash.com/photo-1556656793-08538906a9f8?w=400&h=400&fit=crop',
+  },
+  {
+    id: 702,
+    name: 'Moto G Power',
+    brand: 'Motorola',
+    price: 299,
+    storage: '128GB',
+    color: '#06b6d4',
+    image:
+      'https://images.unsplash.com/photo-1556656793-08538906a9f8?w=400&h=400&fit=crop&q=80',
+  },
+  {
+    id: 703,
+    name: 'Moto Razr 40',
+    brand: 'Motorola',
+    price: 999,
+    storage: '256GB',
+    color: '#06b6d4',
+    image:
+      'https://images.unsplash.com/photo-1556656793-08538906a9f8?w=400&h=400&fit=crop&q=90',
+  },
+  // Huawei (IDs 801-803)
+  {
+    id: 801,
+    name: 'Huawei P60 Pro',
+    brand: 'Huawei',
+    price: 899,
+    storage: '256GB',
+    color: '#ef4444',
+    image:
+      'https://images.unsplash.com/photo-1585792180666-f7347f490ea2?w=400&h=400&fit=crop',
+  },
+  {
+    id: 802,
+    name: 'Huawei Mate 60',
+    brand: 'Huawei',
+    price: 999,
+    storage: '256GB',
+    color: '#ef4444',
+    image:
+      'https://images.unsplash.com/photo-1585792180666-f7347f490ea2?w=400&h=400&fit=crop&q=80',
+  },
+  {
+    id: 803,
+    name: 'Huawei Nova 11',
+    brand: 'Huawei',
+    price: 499,
+    storage: '128GB',
+    color: '#ef4444',
+    image:
+      'https://images.unsplash.com/photo-1585792180666-f7347f490ea2?w=400&h=400&fit=crop&q=90',
+  },
 ]
 
 export default phones

@@ -30,6 +30,21 @@ function Categories() {
       image: "https://images.unsplash.com/photo-1610945265064-0e34e5519efa?w=400&h=400&fit=crop",
     },
     {
+      name: "Google",
+      desc: "Pixel series phones",
+      image: "https://images.unsplash.com/photo-1598327105666-5b1730a3d066?w=400&h=400&fit=crop",
+    },
+    {
+      name: "Motorola",
+      desc: "Classic & modern phones",
+      image: "https://images.unsplash.com/photo-1556656793-08538906a9f8?w=400&h=400&fit=crop",
+    },
+    {
+      name: "Huawei",
+      desc: "Innovative technology",
+      image: "https://images.unsplash.com/photo-1585792180666-f7347f490ea2?w=400&h=400&fit=crop",
+    },
+    {
       name: "Accessories",
       desc: "Smart mobile gear",
       image: "https://images.unsplash.com/photo-1572569028738-411a196cb574?w=400&h=400&fit=crop",
@@ -47,6 +62,9 @@ function Categories() {
       'Tablets': '/category/tablets',
       'iPhone': '/category/iphone',
       'Samsung': '/category/samsung',
+      'Google': '/category/google',
+      'Motorola': '/category/motorola',
+      'Huawei': '/category/huawei',
       'Accessories': '/category/accessories',
       'Wearables': '/category/wearables'
     }
