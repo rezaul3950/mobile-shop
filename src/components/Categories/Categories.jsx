@@ -1,10 +1,12 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
   ArrowRight
 } from "lucide-react";
 
 
 function Categories() {
+  const navigate = useNavigate()
 
   const categories = [
     {
@@ -38,6 +40,18 @@ function Categories() {
       image: "https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=400&h=400&fit=crop",
     },
   ];
+
+  const handleCategoryClick = (categoryName) => {
+    const categoryRoutes = {
+      'Smartphones': '/category/smartphones',
+      'Tablets': '/category/tablets',
+      'iPhone': '/category/iphone',
+      'Samsung': '/category/samsung',
+      'Accessories': '/category/accessories',
+      'Wearables': '/category/wearables'
+    }
+    navigate(categoryRoutes[categoryName] || '/products')
+  }
 
   return (
 
@@ -193,7 +207,9 @@ function Categories() {
                   overflow-hidden
 
                   cursor-pointer
+
                   "
+                  onClick={() => handleCategoryClick(item.name)}
                 >
 
 
