@@ -129,9 +129,15 @@ function Navbar() {
               About
             </button>
             <button 
-              onClick={() => scrollToSection('categories')} 
+              onClick={() => {
+                if (location.pathname === '/') {
+                  scrollToSection('categories')
+                } else {
+                  navigate('/categories')
+                }
+              }} 
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-                activeSection === 'categories'
+                activeSection === 'categories' && location.pathname === '/'
                   ? 'text-white bg-purple-500/20 shadow-lg shadow-purple-500/20'
                   : 'text-slate-300 hover:text-white hover:bg-purple-500/10'
               }`}
@@ -414,7 +420,7 @@ function Navbar() {
           {[
             { name: "Home", section: "home" },
             { name: "About", section: "about" },
-            { name: "Categories", section: "categories" },
+            { name: "Categories", section: "categories", isPage: true },
             { name: "Deals", section: "deals" },
             { name: "Shop", section: "shop" },
             { name: "Contact", section: "contact" }
@@ -423,7 +429,11 @@ function Navbar() {
             <button
               key={item.name}
               onClick={() => {
-                scrollToSection(item.section)
+                if (item.isPage && location.pathname !== '/') {
+                  navigate(item.section === 'categories' ? '/categories' : '/')
+                } else {
+                  scrollToSection(item.section)
+                }
                 setMenuOpen(false)
               }}
 
