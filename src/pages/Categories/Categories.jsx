@@ -34,6 +34,27 @@ function Categories() {
       color: "from-blue-600 to-blue-800"
     },
     {
+      name: "Google",
+      desc: "Pixel series phones",
+      image: "https://images.unsplash.com/photo-1598327105666-5b1730a3d066?w=400&h=400&fit=crop",
+      icon: FiSmartphone,
+      color: "from-green-500 to-emerald-500"
+    },
+    {
+      name: "Motorola",
+      desc: "Classic & modern phones",
+      image: "https://images.unsplash.com/photo-1556656793-08538906a9f8?w=400&h=400&fit=crop",
+      icon: FiSmartphone,
+      color: "from-cyan-500 to-blue-500"
+    },
+    {
+      name: "Huawei",
+      desc: "Innovative technology",
+      image: "https://images.unsplash.com/photo-1585792180666-f7347f490ea2?w=400&h=400&fit=crop",
+      icon: FiSmartphone,
+      color: "from-red-500 to-rose-500"
+    },
+    {
       name: "Accessories",
       desc: "Smart mobile gear",
       image: "https://images.unsplash.com/photo-1572569028738-411a196cb574?w=400&h=400&fit=crop",
@@ -56,6 +77,9 @@ function Categories() {
       'Tablets': '/category/tablets',
       'iPhone': '/category/iphone',
       'Samsung': '/category/samsung',
+      'Google': '/category/google',
+      'Motorola': '/category/motorola',
+      'Huawei': '/category/huawei',
       'Accessories': '/category/accessories',
       'Wearables': '/category/wearables'
     }
@@ -80,7 +104,7 @@ function Categories() {
         </div>
 
         {/* Categories Grid - Consistent Design */}
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 lg:gap-6">
           {categories.map((category, index) => {
             const Icon = category.icon
             return (
