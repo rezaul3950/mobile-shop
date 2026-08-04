@@ -1,4 +1,5 @@
 import { FiWatch } from 'react-icons/fi'
+import { Link } from 'react-router-dom'
 
 function CategoryWearables() {
   const products = [
@@ -48,7 +49,7 @@ function CategoryWearables() {
         {/* Products Grid - 2 columns on mobile */}
         <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:gap-6">
           {products.map((phone, index) => (
-            <div key={phone.id} className="group relative bg-gradient-to-br from-slate-800/90 to-slate-900/90 backdrop-blur-xl border-2 border-slate-700/50 rounded-2xl sm:rounded-3xl overflow-hidden hover:border-pink-400/60 hover:scale-105 transition-all duration-300">
+            <Link key={phone.id} to={`/product/${phone.id}`} className="group relative bg-gradient-to-br from-slate-800/90 to-slate-900/90 backdrop-blur-xl border-2 border-slate-700/50 rounded-2xl sm:rounded-3xl overflow-hidden hover:border-pink-400/60 hover:scale-105 transition-all duration-300 block">
               {/* Gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-br from-pink-600/0 via-rose-600/0 to-red-600/0 group-hover:from-pink-600/15 group-hover:via-rose-600/15 group-hover:to-red-600/15 transition-all duration-300"></div>
               
@@ -88,7 +89,7 @@ function CategoryWearables() {
 
               {/* Corner accent */}
               <div className="absolute top-2 right-2 w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-pink-400/0 group-hover:bg-pink-400 transition-all duration-300"></div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
