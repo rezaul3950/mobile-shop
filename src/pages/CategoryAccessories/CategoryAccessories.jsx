@@ -45,21 +45,49 @@ function CategoryAccessories() {
           </p>
         </div>
 
-        {/* Products Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Products Grid - 2 columns on mobile */}
+        <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:gap-6">
           {products.map((phone, index) => (
-            <div key={phone.id} className="group relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden hover:-translate-y-2 transition-all duration-500 hover:border-green-500/50 hover:shadow-2xl hover:shadow-green-500/30">
-              <div className="relative p-6 sm:p-8 bg-gradient-to-br from-green-500/10 via-emerald-500/10 to-teal-500/10 flex items-center justify-center min-h-[280px]">
-                <img src={phone.image} alt={phone.name} className="w-full h-48 object-contain group-hover:scale-110 group-hover:rotate-3 transition-all duration-500" />
+            <div key={phone.id} className="group relative bg-gradient-to-br from-slate-800/90 to-slate-900/90 backdrop-blur-xl border-2 border-slate-700/50 rounded-2xl sm:rounded-3xl overflow-hidden hover:border-green-400/60 hover:scale-105 transition-all duration-300">
+              {/* Gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-br from-green-600/0 via-emerald-600/0 to-teal-600/0 group-hover:from-green-600/15 group-hover:via-emerald-600/15 group-hover:to-teal-600/15 transition-all duration-300"></div>
+              
+              {/* Shine effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+
+              {/* Image Container */}
+              <div className="relative p-3 sm:p-6 lg:p-8 bg-gradient-to-br from-green-500/10 via-emerald-500/10 to-teal-500/10 flex items-center justify-center min-h-[140px] sm:min-h-[200px] lg:min-h-[280px]">
+                {/* Brand Badge */}
+                <span className="absolute top-2 left-2 px-2 py-1 bg-gradient-to-r from-green-500/30 to-emerald-500/30 backdrop-blur-xl border border-green-400/40 rounded-lg text-[10px] sm:text-xs font-bold text-green-200 uppercase tracking-wider z-10">
+                  {phone.brand}
+                </span>
+                
+                <img src={phone.image} alt={phone.name} className="w-full h-24 sm:h-40 lg:h-48 object-contain group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 relative z-10" />
               </div>
-              <div className="p-6 sm:p-8 relative">
-                <div className="absolute top-0 left-6 right-6 h-0.5 bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 opacity-50"></div>
-                <h3 className="text-xl font-bold text-white mb-2">{phone.name}</h3>
-                <p className="text-sm text-slate-400 mb-4">{phone.storage}</p>
+
+              {/* Content */}
+              <div className="relative z-10 p-3 sm:p-6 lg:p-8">
+                {/* Gradient Line */}
+                <div className="absolute top-0 left-3 right-3 sm:left-6 sm:right-6 h-0.5 bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 opacity-50"></div>
+                
+                <h3 className="text-sm sm:text-lg lg:text-xl font-bold text-white mb-1 sm:mb-2 group-hover:text-green-300 transition-colors leading-tight">{phone.name}</h3>
+                <p className="text-[10px] sm:text-sm text-slate-400 mb-2 sm:mb-4 flex items-center gap-1">
+                  <svg className="w-3 h-3 text-green-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                  </svg>
+                  {phone.storage}
+                </p>
+                
+                {/* Price */}
                 <div className="flex items-center justify-between">
-                  <span className="text-3xl font-black bg-gradient-to-r from-green-400 via-emerald-500 to-teal-500 bg-clip-text text-transparent">${phone.price}</span>
+                  <span className="text-lg sm:text-2xl lg:text-3xl font-black bg-gradient-to-r from-green-400 via-emerald-500 to-teal-500 bg-clip-text text-transparent">
+                    ${phone.price}
+                  </span>
                 </div>
               </div>
+
+              {/* Corner accent */}
+              <div className="absolute top-2 right-2 w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-green-400/0 group-hover:bg-green-400 transition-all duration-300"></div>
             </div>
           ))}
         </div>
