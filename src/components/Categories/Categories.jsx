@@ -364,7 +364,10 @@ function Categories() {
 
 
           <button
-            onClick={() => navigate('/categories')}
+            onClick={() => {
+              navigate('/categories')
+              setTimeout(() => window.scrollTo(0, 0), 100)
+            }}
             className="
             flex
             items-center
