@@ -379,7 +379,7 @@ function Categories() {
 
 
           <button
-            onClick={() => navigate('/products')}
+            onClick={() => navigate('/categories')}
             className="
             flex
             items-center
