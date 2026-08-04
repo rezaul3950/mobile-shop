@@ -50,8 +50,16 @@ function Categories() {
   ]
 
   const handleCategoryClick = (categoryName) => {
-    // Navigate to products page with category filter
-    navigate(`/products?category=${categoryName.toLowerCase()}`)
+    // Navigate to individual category page
+    const categoryRoutes = {
+      'Smartphones': '/category/smartphones',
+      'Tablets': '/category/tablets',
+      'iPhone': '/category/iphone',
+      'Samsung': '/category/samsung',
+      'Accessories': '/category/accessories',
+      'Wearables': '/category/wearables'
+    }
+    navigate(categoryRoutes[categoryName] || '/products')
   }
 
   return (

@@ -1,0 +1,71 @@
+import { FiHeadphones } from 'react-icons/fi'
+
+function CategoryAccessories() {
+  const products = [
+    {
+      id: 1,
+      name: 'Wireless Earbuds Pro',
+      brand: 'TechBrand',
+      price: 199,
+      storage: 'Premium',
+      image: 'https://images.unsplash.com/photo-1572569028738-411a196cb574?w=400&h=400&fit=crop',
+    },
+    {
+      id: 2,
+      name: 'Fast Charger 65W',
+      brand: 'PowerTech',
+      price: 49,
+      storage: '65W',
+      image: 'https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=400&h=400&fit=crop',
+    },
+    {
+      id: 3,
+      name: 'Phone Case Premium',
+      brand: 'ProtectCo',
+      price: 39,
+      storage: 'Universal',
+      image: 'https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=400&h=400&fit=crop',
+    }
+  ]
+
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-slate-900 via-indigo-950 to-purple-900 py-8 px-4">
+      <div className="max-w-7xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-green-500/20 to-emerald-500/20 backdrop-blur-xl border border-green-500/30 rounded-full text-sm font-bold text-green-300 uppercase tracking-wider mb-4">
+            <FiHeadphones className="text-green-400" />
+            <span>Category</span>
+          </div>
+          <h1 className="text-4xl md:text-5xl font-black text-white mb-4">
+            Accessories
+          </h1>
+          <p className="text-slate-400 max-w-2xl mx-auto">
+            Smart mobile gear and accessories
+          </p>
+        </div>
+
+        {/* Products Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {products.map((phone, index) => (
+            <div key={phone.id} className="group relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden hover:-translate-y-2 transition-all duration-500 hover:border-green-500/50 hover:shadow-2xl hover:shadow-green-500/30">
+              <div className="relative p-6 sm:p-8 bg-gradient-to-br from-green-500/10 via-emerald-500/10 to-teal-500/10 flex items-center justify-center min-h-[280px]">
+                <img src={phone.image} alt={phone.name} className="w-full h-48 object-contain group-hover:scale-110 group-hover:rotate-3 transition-all duration-500" />
+              </div>
+              <div className="p-6 sm:p-8 relative">
+                <div className="absolute top-0 left-6 right-6 h-0.5 bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 opacity-50"></div>
+                <h3 className="text-xl font-bold text-white mb-2">{phone.name}</h3>
+                <p className="text-sm text-slate-400 mb-4">{phone.storage}</p>
+                <div className="flex items-center justify-between">
+                  <span className="text-3xl font-black bg-gradient-to-r from-green-400 via-emerald-500 to-teal-500 bg-clip-text text-transparent">${phone.price}</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default CategoryAccessories
